@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Point About Origin</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400"></canvas>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Function to scale a point (x, y) about the origin (0, 0)
+        function scalePoint(x, y, scaleX, scaleY) {
+            var scaledX = x * scaleX;
+            var scaledY = y * scaleY;
+            return { x: scaledX, y: scaledY };
+        }
+
+        // Original point coordinates
+        var pointX = 50;
+        var pointY = 50;
+
+        // Scaling factors
+        var scaleX = 2;
+        var scaleY = 1.5;
+
+        // Scale the point about the origin
+        var scaledPoint = scalePoint(pointX, pointY, scaleX, scaleY);
+
+        // Draw the original point
+        ctx.beginPath();
+        ctx.arc(pointX, pointY, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = 'blue';
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw the label for the original point
+        ctx.fillStyle = 'black';
+        ctx.fillText('Original Point', pointX, pointY - 10);
+
+        // Draw the scaled point
+        ctx.beginPath();
+        ctx.arc(scaledPoint.x, scaledPoint.y, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        ctx.closePath();
+
+        // Draw the label for the scaled point
+        ctx.fillStyle = 'black';
+        ctx.fillText('Scaled Point', scaledPoint.x, scaledPoint.y - 10);
+    });
+</script>
+
+</body>
+</html>

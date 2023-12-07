@@ -1,0 +1,48 @@
+import turtle
+
+# Function to draw Bangla Ka (ক)
+def draw_ka():
+    turtle.penup()
+    turtle.goto(-100, 0)
+    turtle.pendown()
+    turtle.left(45)
+    turtle.forward(70)
+    turtle.backward(70)
+    turtle.right(90)
+    turtle.forward(70)
+    turtle.left(135)
+    turtle.forward(98)
+    turtle.backward(20)
+    turtle.right(90)
+    turtle.circle(-25, 90)
+    turtle.penup()
+    turtle.goto(-50, 49)
+    turtle.pendown()
+    turtle.right(90)
+    turtle.forward(60)
+    turtle.backward(120)
+    turtle.hideturtle()
+
+# Function to draw Bangla Kha (খ)
+def draw_kha():
+    turtle.penup()
+    turtle.goto(-100, 0)
+    turtle.pendown()
+    turtle.left(45)
+    turtle.forward(70)
+    turtle.backward(70)
+    turtle.right(90)
+    turtle.forward(70)
+    turtle.left(135)
+    turtle.forward(100)
+    turtle.backward(20)
+    turtle.right(90)
+    turtle.circle(-30, 90)
+    turtle.hideturtle()
+
+turtle.speed(3)
+
+draw_ka()
+#draw_kha()
+
+turtle.done()
